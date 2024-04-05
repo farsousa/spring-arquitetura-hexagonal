@@ -14,7 +14,7 @@ public class ExceptionsHandler {
 		RespostaDto<?> resposta = new RespostaDto<>();
 		resposta.setMensagem(e.getMessage());
 		
-		return ResponseEntity.status(404).body(resposta);
+		return ResponseEntity.status(400).body(resposta);
 	}
 	
 	

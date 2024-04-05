@@ -42,12 +42,13 @@ public class LivroEntity {
 	}
 	
 	public Livro toDomain() {
-		return Livro.builder()
-				.autor(autor)
-				.descricao(descricao)
-				.titulo(titulo)
-				.id(id)
-				.build();
+		Livro livro = new Livro();
+		livro.setAutor(autor);
+		livro.setDescricao(descricao);
+		livro.setTitulo(titulo);
+		livro.setId(id);
+		
+		return livro;
 	}
 
 }

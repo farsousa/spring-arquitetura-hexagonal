@@ -16,11 +16,12 @@ public class LivroForm {
 	private String descricao;
 	
 	public Livro toEntity() {
-		return Livro.builder()
-				.autor(autor)
-				.descricao(descricao)
-				.titulo(titulo)
-				.build();
+		Livro livro = new Livro();
+		livro.setAutor(autor);
+		livro.setDescricao(descricao);
+		livro.setTitulo(titulo);
+		
+		return livro;
 	}
 
 }

@@ -4,13 +4,17 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.farsousa.arquiteturahexagonal.adapters.outbound.persistense.BuscarLivroAdapter;
+import com.farsousa.arquiteturahexagonal.adapters.outbound.persistense.ExcluirLivroAdapter;
 import com.farsousa.arquiteturahexagonal.adapters.outbound.persistense.SalvarLivroAdapter;
 import com.farsousa.arquiteturahexagonal.adapters.outbound.persistense.repository.LivroRepository;
 import com.farsousa.arquiteturahexagonal.core.ports.inbound.BuscarLivroUseCasePort;
+import com.farsousa.arquiteturahexagonal.core.ports.inbound.ExcluirLivroUseCasePort;
 import com.farsousa.arquiteturahexagonal.core.ports.inbound.SalvarLivroUseCasePort;
 import com.farsousa.arquiteturahexagonal.core.ports.outbound.BuscarLivroAdapterPort;
+import com.farsousa.arquiteturahexagonal.core.ports.outbound.ExcluirLivroAdapterPort;
 import com.farsousa.arquiteturahexagonal.core.ports.outbound.SalvarLivroAdapterPort;
 import com.farsousa.arquiteturahexagonal.core.usecases.BuscarLivroUseCase;
+import com.farsousa.arquiteturahexagonal.core.usecases.ExcluirLivroUseCase;
 import com.farsousa.arquiteturahexagonal.core.usecases.SalvarLivroUseCase;
 
 @Configuration
@@ -36,6 +40,14 @@ public class PortConfig {
 		return new BuscarLivroAdapter(livroRepository);
 	}
 	
+	@Bean
+	ExcluirLivroUseCasePort excluirLivroUseCasePort(ExcluirLivroAdapterPort excluirLivroAdapterPort) {
+		return new ExcluirLivroUseCase(excluirLivroAdapterPort);
+	}
 	
+	@Bean
+	ExcluirLivroAdapterPort excluirLivroPorIdAdapterPort(LivroRepository livroRepository) {
+		return new ExcluirLivroAdapter(livroRepository);
+	}
 	
 }
