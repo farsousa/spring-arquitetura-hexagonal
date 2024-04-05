@@ -55,7 +55,7 @@ public class LivroController {
 			@Content(mediaType = "application/json", schema = @Schema(implementation = Object.class), examples = @ExampleObject("{\"mensagem\": \"Descrição do erro aqui!\"}"))
 		})
 	})
-	@PostMapping("/salvar")
+	@PostMapping
 	public ResponseEntity<RespostaDto<LivroDto>> salvar(
 		@Schema(example = "{\"autor\":\"Gustavo\",\"titulo\":\"Como ter 3 milhões em uma semana\",\"descricao\":\"Uma dica emocionante\"}") @RequestBody LivroForm livroASalvar
 	) {
@@ -65,7 +65,7 @@ public class LivroController {
 		resposta.setDado(LivroDto.fromEntity(livroSalvo));
 		resposta.setMensagem("Livro salvo com sucesso!");
 		
-		return ResponseEntity.status(202).body(resposta);
+		return ResponseEntity.status(201).body(resposta);
 	}
 	
 	@Operation(summary = "Listar livros por id e/ou titulo e/ou autor")
