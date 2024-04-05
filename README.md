@@ -16,3 +16,7 @@ A estrutura do projeto ficou da seguinte forma:
 
 ![image](https://github.com/farsousa/spring-arquitetura-hexagonal/assets/52000592/051e841c-9657-43c5-8612-542d9112c608)
 
+## Swagger
+Para verificar os serviços oferecidos, após rodar o projeto localmente, acesse: http://localhost:8080/swagger-ui/index.html
+
+
