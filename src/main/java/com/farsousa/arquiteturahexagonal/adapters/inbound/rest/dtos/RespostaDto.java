@@ -1,4 +1,4 @@
-package com.farsousa.arquiteturahexagonal.adapters.inbound.web.dtos;
+package com.farsousa.arquiteturahexagonal.adapters.inbound.rest.dtos;
 
 import java.util.List;
 

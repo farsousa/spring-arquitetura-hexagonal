@@ -1,4 +1,4 @@
-package com.farsousa.arquiteturahexagonal.adapters.inbound.web;
+package com.farsousa.arquiteturahexagonal.adapters.inbound.rest;
 
 import java.util.List;
 
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.farsousa.arquiteturahexagonal.adapters.inbound.web.dtos.LivroDto;
-import com.farsousa.arquiteturahexagonal.adapters.inbound.web.dtos.RespostaDto;
-import com.farsousa.arquiteturahexagonal.adapters.inbound.web.forms.LivroForm;
+import com.farsousa.arquiteturahexagonal.adapters.inbound.rest.dtos.LivroDto;
+import com.farsousa.arquiteturahexagonal.adapters.inbound.rest.dtos.RespostaDto;
+import com.farsousa.arquiteturahexagonal.adapters.inbound.rest.forms.LivroForm;
 import com.farsousa.arquiteturahexagonal.core.domains.Livro;
 import com.farsousa.arquiteturahexagonal.core.ports.inbound.BuscarLivroUseCasePort;
 import com.farsousa.arquiteturahexagonal.core.ports.inbound.ExcluirLivroUseCasePort;
@@ -33,7 +33,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @OpenAPIDefinition(info = @Info(title = "API Arquitetura Hexagonal", version = "1.0.0", description = "API para ser referência de estudo no assunto arquitetura hexagonal."))
 @Tag(name = "Livro")
 @RestController
-@RequestMapping("/livro")
+@RequestMapping("/livros")
 public class LivroController {
 	
 	private final SalvarLivroUseCasePort salvarLivroUseCasePort;
@@ -77,7 +77,7 @@ public class LivroController {
 			@Content(mediaType = "application/json", schema = @Schema(implementation = Object.class), examples = @ExampleObject("{\"mensagem\": \"Descrição do erro aqui!\"}"))
 		})
 	})
-	@GetMapping("/buscar")
+	@GetMapping
 	public ResponseEntity<RespostaDto<LivroDto>> buscar(
 		@RequestParam(required = false) String titulo, 
 		@RequestParam(required = false) String autor, 

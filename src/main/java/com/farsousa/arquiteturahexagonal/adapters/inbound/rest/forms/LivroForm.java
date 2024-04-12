@@ -1,4 +1,4 @@
-package com.farsousa.arquiteturahexagonal.adapters.inbound.web.forms;
+package com.farsousa.arquiteturahexagonal.adapters.inbound.rest.forms;
 
 import com.farsousa.arquiteturahexagonal.core.domains.Livro;
 

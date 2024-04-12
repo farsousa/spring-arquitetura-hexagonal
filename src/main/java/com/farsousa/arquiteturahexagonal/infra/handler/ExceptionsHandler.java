@@ -4,7 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.farsousa.arquiteturahexagonal.adapters.inbound.web.dtos.RespostaDto;
+import com.farsousa.arquiteturahexagonal.adapters.inbound.rest.dtos.RespostaDto;
 
 @RestControllerAdvice
 public class ExceptionsHandler {
